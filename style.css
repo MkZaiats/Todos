@@ -35,6 +35,11 @@ body {
     border-radius: 10px 10px 0px 0px;
 }
 
+/* .todos__dark {
+    background-color:rgb(63, 23, 23);
+    color: thistle;
+} */
+
 .todos__header {
     font-size: 2.5rem;
     
@@ -98,8 +103,13 @@ body {
 .svg {
     width: 2.8rem;
     height: 2.1rem;
+    transform-origin: bottom right 60px;
 }
 
+.svg:hover {
+    width: 3.0rem;
+    height: 2.2rem;
+}
 
 .todos__form {
     display: flex;
@@ -153,16 +163,6 @@ body {
     display: flex;
 }
 
-.todos__counter {
-    height: 45px;
-    width: 100%;
-    font-size: 2.5rem;
-    color: rgb(47, 13, 80);
-    background-color: grey;
-    margin: 0px;
-    line-height: 45px;
-    text-align: center;
-}
 
 .todos__del--btn {
     font-size: 1.5rem;
@@ -176,6 +176,11 @@ body {
     position: relative;
 }
 
+.todos__del--btn__dark {
+    background-color: rgba(85, 2, 2, 0.856);
+    color: wheat;
+}
+
 .todos__show1--btn {
     font-size: 1.5rem;
     height: 45px;
@@ -183,6 +188,11 @@ body {
     color: white;
     background-color: rgba(255, 0, 0, 0.568);
     border: none;
+}
+
+.todos__show1--btn__dark {
+    background-color: rgba(63, 2, 2, 0.856);
+    color: wheat;
 }
 
 .todos__show2--btn {
@@ -194,6 +204,11 @@ body {
     border: none;
 }
 
+.todos__show2--btn__dark {
+    background-color: rgba(36, 3, 3, 0.856);
+    color: wheat;
+}
+
 .todos__show3--btn {
     font-size: 1.5rem;
     height: 45px;
@@ -203,16 +218,42 @@ body {
     border: none;
 }
 
+.todos__show3--btn__dark {
+    background-color: rgb(58, 3, 3);
+    color: wheat;
+}
+
 .todos__del--btn:hover, .todos__show1--btn:hover, .todos__show2--btn:hover, .todos__show3--btn:hover {
     cursor: pointer;
     font-size: 1.6rem;
     background-color: rgb(165, 39, 39);
 }
 
+.todos__counter {
+    height: 45px;
+    width: 100%;
+    font-size: 2.5rem;
+    color: rgb(47, 13, 80);
+    background-color: grey;
+    margin: 0px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.todos__counter__dark {
+    background-color: rgb(63, 56, 56);
+    color: rgb(7, 2, 54);
+}
+
 .todos__list {
     list-style-type: none;
     margin: 0px;
     padding-left: 0px;
+}
+
+.todos__list__dark {
+    background-color: rgb(29, 21, 21);
+    color: thistle;
 }
 
 .todos__line {
@@ -247,7 +288,6 @@ body {
     /* width: 100%; */
     height: 25px;
     border-radius: 50% 50%;
-
 }
 
 .flex {
@@ -270,9 +310,17 @@ body {
     } */
 }
 
-@media (max-width: 540px) {
+@media (max-width: 740px) {
     html {
         font-size: 8px;
+    }
+
+    .todos__form__field {
+        width: 88%;
+    }
+    
+    .todos__form--btn {
+        width: 12%;
     }
     
 }
@@ -282,11 +330,25 @@ body {
         font-size: 6px;
     }
     
+    .todos__form__field {
+        width: 85%;
+    }
+    
+    .todos__form--btn {
+        width: 15%;
+    }
 }
 
 @media (max-width: 325px) {
     html {
         font-size: 5px;
+    }
+    
+}
+
+@media (max-width: 260px) {
+    html {
+        font-size: 4px;
     }
     
 }

@@ -38,8 +38,8 @@ class TodosTemplate {
         this.todosShowBtn1 = this.todosInfo.querySelector('.todos__show1--btn');
         this.todosShowBtn2 = this.todosInfo.querySelector('.todos__show2--btn');
         this.todosShowBtn3 = this.todosInfo.querySelector('.todos__show3--btn');
-        this.list = this.host.querySelector('.todos__list');
         this.todosCounter = this.host.querySelector('.todos__counter');
+        this.list = this.host.querySelector('.todos__list');
         this.uaLangBtn = this.host.querySelector('.todos__ua--lang');
         this.enLangBtn = this.host.querySelector('.todos__en--lang');
         this.todosTheme = this.host.querySelector('.todos__theme')
@@ -53,26 +53,24 @@ class TodosTemplate {
     renderTheme (uiMode) {
         if (uiMode === 'light') {
             this.todosTheme.innerHTML = `<img src="https://www.svgrepo.com/show/34399/light-bulb.svg" class="svg">`;
-            this.turnLight();
+            this.turnTheme();
         } else if (uiMode === 'dark') {
             this.todosTheme.innerHTML = `<img src="https://www.svgrepo.com/show/17950/red-light.svg" class="svg">`;
-            this.turnDark();
+            this.turnTheme();
         }
     }
 
-    turnLight() {
+    turnTheme() {
         this.host.parentElement.classList.toggle('app__dark');
         this.todosHeader.classList.toggle('todos__header__top__dark');
         this.field.classList.toggle('todos__form__field__dark');
         this.formBtn.classList.toggle('todos__form--btn__dark');
-        console.log(this.formBtn);
-    }
-
-    turnDark () {
-        this.host.parentElement.classList.toggle('app__dark');
-        this.todosHeader.classList.toggle('todos__header__top__dark');
-        this.field.classList.toggle('todos__form__field__dark');
-        this.formBtn.classList.toggle('todos__form--btn__dark');
+        this.todosCounter.classList.toggle('todos__counter__dark');
+        this.todosDelBtn.classList.toggle('todos__del--btn__dark');
+        this.todosShowBtn1.classList.toggle('todos__show1--btn__dark');
+        this.todosShowBtn2.classList.toggle('todos__show2--btn__dark');
+        this.todosShowBtn3.classList.toggle('todos__show3--btn__dark');
+        this.list.classList.toggle('todos__list__dark')
     }
 
     renderUI(lang, length) {
@@ -113,7 +111,7 @@ class TodosTemplate {
                     ${todo.title}
                 </span> 
                 <div class="flex">
-                    <button class="todo__del--btn">DEL</button>
+                    <button class="todo__del--btn"><img src="https://www.svgrepo.com/show/94821/delete.svg" class="svg"></button>
                 </div>
             </li>
             <li class="todos__line"></li>
@@ -152,7 +150,7 @@ class TodosTemplate {
 
     onTodosBtns(cb) {
         this.todosInfo.addEventListener('click', (e) => {
-            const btnClass = e.target.getAttribute('class');
+            const btnClass = e.target.classList[0];
             console.log(btnClass);
             cb(btnClass)
         })
@@ -160,8 +158,8 @@ class TodosTemplate {
 
     onDeleteTodo(cb) {
         this.list.addEventListener('click', (e) => {
-            if (e.target.className === 'todo__del--btn') {
-                let id = +e.target.parentNode.parentElement.querySelector('.todos__checkbox').getAttribute('data-id')
+            if (e.target.closest('button') && e.target.closest('button').className === 'todo__del--btn') {
+                let id = +e.target.closest('button').parentNode.parentElement.querySelector('.todos__checkbox').getAttribute('data-id')
                 cb(id)
             }
         })
