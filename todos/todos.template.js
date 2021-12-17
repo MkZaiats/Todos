@@ -89,7 +89,7 @@ class TodosTemplate {
             this.renderTodosCounter(length, lang)
 
         } else if (lang === 'ua') {
-            todosTitle.innerHTML = 'Список справ';
+            todosTitle.innerHTML = 'Перелік справ';
             this.field['placeholder'] = 'Додайте справу сюди';
             this.todosDelBtn.innerHTML = 'Видалити виконані';
             this.todosShowBtn1.innerHTML = 'Показати виконані';

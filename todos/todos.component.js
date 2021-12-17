@@ -5,12 +5,12 @@ class TodosComponent {
 
         this.todos = [
             {
-                title: 'lorsad foasifasjfasoi hfsai;saasdlias oashfasoihfaslfi hasoifhasogfha sohasoihasoi',
+                title: 'Play computer games',
                 id: 1,
                 done: false
             },
             {
-                title: 'lorsa dfoasifa sjfasoih fsai;sa',
+                title: 'Watch a movie and criticise it',
                 id: 2,
                 done: false
             },
