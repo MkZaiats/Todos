@@ -35,11 +35,6 @@ body {
     border-radius: 10px 10px 0px 0px;
 }
 
-/* .todos__dark {
-    background-color:rgb(63, 23, 23);
-    color: thistle;
-} */
-
 .todos__header {
     font-size: 2.5rem;
     
@@ -298,17 +293,6 @@ body {
     margin-right: 5px;
 }
 
-@media (max-width: 1031px) {
-    /* .todos__counter {
-        font-size: 2.0rem;
-    } */
-}
-
-@media (max-width: 730px) {
-    /* .todos__counter {
-        font-size: 1.5rem;
-    } */
-}
 
 @media (max-width: 740px) {
     html {
