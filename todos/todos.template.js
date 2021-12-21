@@ -151,7 +151,6 @@ class TodosTemplate {
     onTodosBtns(cb) {
         this.todosInfo.addEventListener('click', (e) => {
             const btnClass = e.target.classList[0];
-            console.log(btnClass);
             cb(btnClass)
         })
     }
